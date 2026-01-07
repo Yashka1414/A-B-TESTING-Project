@@ -1,76 +1,170 @@
-# CAPM Analysis – Apple vs S&P 500
-
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Tools & Technologies](#tools--technologies)
-- [Dataset Details](#dataset-details)
-- [Key Steps Performed](#key-steps-performed)
-- [Key Outcomes](#key-outcomes)
-- [Project Structure](#project-structure)
-- [Author](#author)
+# Marketing Campaign Effectiveness Analysis  
+## A/B Testing, Regression, and Time Series Analysis
 
 ---
 
-## Project Overview
-This project demonstrates a practical implementation of the **Capital Asset Pricing Model (CAPM)** using real market data.  
+## 1. Business Problem
 
-The analysis focuses on **Apple Inc. (AAPL)** stock and compares its performance against the **S&P 500 index**.
+Organizations often distribute marketing budgets across multiple digital advertising platforms without a clear, data-driven understanding of which channel delivers the highest return on investment (ROI).
 
-**Goal:** Showcase practical data analysis skills including:
-- Data cleaning  
-- Merging datasets  
-- Return calculation  
-- Basic financial analysis using Python  
+In this project, the client is running parallel advertising campaigns on **Facebook Ads** and **Google Ads (AdWords)** to drive customer conversions.
 
----
+Despite similar budget allocations, there is limited visibility into which platform performs better in terms of **engagement, conversion efficiency, cost effectiveness, and revenue generation**. Making budget decisions without analytical validation increases the risk of inefficient spend and reduced campaign profitability.
 
-## Tools & Technologies
-- Python  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Jupyter Notebook  
+This analysis aims to provide a structured comparison of both platforms using statistical and analytical techniques.
 
 ---
 
-## Dataset Details
-- `HistoricalQuotes.csv` – Apple stock historical prices  
-- `sp500_index.csv` – S&P 500 index historical data  
+## 2. Business Objective
 
-**Preprocessing performed:**  
-- Aligned dates across datasets  
-- Removed missing values  
+The primary objective of this analysis is to identify which advertising platform—**Facebook Ads or Google Ads**—delivers superior performance and higher ROI.
 
----
+This is achieved through:
 
-## Key Steps Performed
-1. Loaded and cleaned stock market datasets  
-2. Converted price columns to numeric format  
-3. Merged Apple stock data with S&P 500 index data  
-4. Calculated daily returns for Apple and the market  
-5. Computed **Beta** using covariance and variance  
-6. Visualized stock vs market movement  
+- Exploratory Data Analysis (EDA)  
+- Comparative campaign performance evaluation  
+- A/B hypothesis testing  
+- Regression analysis to identify key performance drivers  
+- Time series analysis to evaluate performance trends over time  
 
 ---
 
-## Key Outcomes
-- Estimated **Apple stock Beta** relative to the S&P 500  
-- Clear comparison of Apple’s performance against the market  
-- Practical demonstration of financial data analysis concepts  
-📊 **Sample Visualization:**  
-![Apple vs S&P 500 Returns](apple_vs_sp500.png)
+## 3. Data Overview
+
+The dataset contains daily campaign-level data for both advertising platforms, including:
+
+- Impressions  
+- Clicks  
+- Conversions  
+- Advertising Spend  
+- Revenue  
+
+Derived metrics calculated for analysis:
+
+- Click-Through Rate (CTR)  
+- Cost per Click (CPC)  
+- Cost per Acquisition (CPA)  
+- Conversion Rate  
+- Return on Investment (ROI)  
+
+---
+## Dataset
+**Dataset Name:** A_B_testing_dataset.csv
+
+The dataset contains user-level data used to perform A/B testing analysis, comparing control and variant groups.
+
+Key columns include:
+- user_id
+- group (control / variant)
+- conversion
+- revenue (if applicable)
+
+The dataset was used to evaluate experiment performance and statistical significance.
 ---
 
-## Project Structure
-- `CAPM_Analysis.ipynb` – Main Jupyter Notebook  
-- `HistoricalQuotes.csv` – Apple stock data  
-- `sp500_index.csv` – S&P 500 index data  
-- `README.md` – Project documentation  
+## 4. Exploratory Data Analysis (EDA)
+
+Exploratory Data Analysis was performed to understand data distribution, variability, and overall campaign behavior.
+
+### Key EDA Activities
+- Summary statistics for clicks, conversions, spend, and revenue  
+- Comparison of average CTR, CPC, CPA, and ROI by platform  
+- Identification of outliers and anomalies  
+- Visualization of metric distributions  
+
+EDA helped establish baseline performance differences and guided further statistical analysis.
 
 ---
 
-## Author
-**Yashka**  
-MCA Student | Aspiring Data Analyst  
+## 5. Campaign Performance Comparison
 
-*This project is created for learning and portfolio demonstration purposes.*
+A comparative analysis was conducted to evaluate differences between Facebook Ads and Google Ads across key performance indicators.
+
+### Metrics Compared
+- Click-Through Rate (CTR)  
+- Conversion Rate  
+- Cost per Click (CPC)  
+- Cost per Acquisition (CPA)  
+- Return on Investment (ROI)  
+
+This comparison provides an initial descriptive understanding of platform efficiency and effectiveness.
+
+---
+
+## 6. A/B Testing and Hypothesis Formulation
+
+A/B testing was applied to statistically validate observed differences in performance.
+
+### Hypotheses
+
+- **Null Hypothesis (H₀):**  
+  There is no statistically significant difference in campaign performance between Facebook Ads and Google Ads.
+
+- **Alternative Hypothesis (H₁):**  
+  There is a statistically significant difference in campaign performance between Facebook Ads and Google Ads.
+
+A two-sample statistical test was conducted at a **95% confidence level (α = 0.05)** on key metrics such as conversion rate and CPA.
+
+---
+
+## 7. Regression Analysis
+
+Regression modeling was used to identify the factors influencing campaign success.
+
+### Model Objective
+To quantify the impact of platform choice and engagement metrics on conversions and ROI.
+
+### Model Structure
+- **Dependent Variables:**  
+  - Conversions  
+  - ROI  
+
+- **Independent Variables:**  
+  - Advertising platform (Facebook = 0, Google = 1)  
+  - Advertising spend  
+  - Click volume  
+  - Cost per Click (CPC)  
+  - Click-Through Rate (CTR)  
+
+Regression coefficients and p-values were analyzed to identify statistically significant predictors.
+
+---
+
+## 8. Time Series Analysis
+
+Time series analysis was conducted to evaluate campaign performance trends over time.
+
+### Objectives
+- Identify trends in clicks, conversions, and spend  
+- Detect seasonality or fluctuations  
+- Compare platform stability and consistency  
+
+Daily metrics were analyzed to assess sustained performance patterns.
+
+---
+
+## 9. Key Insights
+
+- Statistically significant performance differences were observed between platforms  
+- Platform choice, ad spend, and click volume strongly influenced conversions  
+- Cost efficiency metrics such as CPA directly impacted ROI  
+- Time series analysis revealed differences in performance consistency  
+
+---
+
+## 10. Conclusion and Business Recommendation
+
+By combining **EDA, A/B testing, regression analysis, and time series analysis**, this project delivers a comprehensive evaluation of marketing campaign performance.
+
+The findings support data-driven budget allocation decisions, helping organizations optimize marketing spend, improve conversion efficiency, and maximize ROI.
+
+---
+
+## 11. Tools and Skills Demonstrated
+
+- Exploratory Data Analysis (EDA)  
+- A/B Testing and Hypothesis Testing  
+- Regression Modeling  
+- Time Series Analysis  
+- Marketing Analytics  
+- Business-Oriented Data Interpretation  
